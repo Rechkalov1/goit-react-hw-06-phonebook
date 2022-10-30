@@ -3,13 +3,14 @@ import { nanoid } from 'nanoid';
 import { Forms, Input, Label, Button } from './Form.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
-import getFilterContacts from 'redux/contacts/selectorC';
+
 import { addContact } from 'redux/contacts/contacts-slice';
 
 export function Form() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const contacts = useSelector(getFilterContacts);
+  const phoneBook = useSelector(state => state.phoneBook);
+  const { contacts } = phoneBook;
   const dispatch = useDispatch();
   const nameId = nanoid();
   const phoneId = nanoid();

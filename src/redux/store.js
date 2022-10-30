@@ -17,11 +17,11 @@ const contactPersistCfg = {
   key: 'root',
   storage,
 };
-const reducer = combineReducers({
-  contact: contactReducer,
+const rootReducer = combineReducers({
+  contacts: contactReducer,
   filter: filterReducer,
 });
-const persistContactReducer = persistReducer(contactPersistCfg, reducer);
+const persistContactReducer = persistReducer(contactPersistCfg, rootReducer);
 
 const store = configureStore({
   reducer: {

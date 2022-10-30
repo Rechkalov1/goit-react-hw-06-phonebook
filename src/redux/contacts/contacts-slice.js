@@ -19,7 +19,7 @@ const contactsSlice = createSlice({
       },
     },
     removeContact: (state, { payload }) => {
-      state.filter(({ id }) => id !== payload);
+      return state.filter(({ id }) => id !== payload);
     },
   },
 });
