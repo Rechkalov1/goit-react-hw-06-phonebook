@@ -5,9 +5,9 @@ import { Ul, Li, Button } from './ContactList.styled';
 
 export function ContactList() {
   const dispatch = useDispatch();
-  const phoneBook = useSelector(state => state.phoneBook);
+  const items = useSelector(getFilterContacts);
 
-  const elements = getFilterContacts(phoneBook).map(({ name, phone, id }) => {
+  const elements = items.map(({ name, phone, id }) => {
     return (
       <Li key={id}>
         Name :{name} Phone :{phone}
