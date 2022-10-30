@@ -1,4 +1,4 @@
-const getFilterContacts = ({ phoneBook }) => {
+const getFilterContacts = phoneBook => {
   const { contacts, filter } = phoneBook;
   const normalizedFilter = filter.toLocaleLowerCase();
   if (!filter) {
